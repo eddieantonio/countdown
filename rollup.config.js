@@ -1,5 +1,3 @@
-// rollup.config.js
-import * as fs from 'fs';
 import svelte from 'rollup-plugin-svelte';
 
 export default {

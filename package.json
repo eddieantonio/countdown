@@ -1,7 +1,7 @@
 {
   "name": "countdown",
   "version": "1.0.0",
-  "description": "",
+  "description": "A countdown",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "rollup": "^1.10.0",
     "rollup-plugin-svelte": "^5.0.3",
-    "svelte": "^3.2.2"
+    "svelte": "^3.1.0"
   }
 }
