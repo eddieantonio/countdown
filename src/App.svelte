@@ -31,21 +31,28 @@
   }
 
   let now = new Date();
-  let timedelta = future - now;
+  let timedelta, days, hours, minutes, seconds;
 
-  let leftover = timedelta;
-  let days = ~~(leftover / (24 * 60 * 60 * 1000));
-  leftover = ~~(leftover % (24 * 60 * 60 * 1000));
+  $: {
+    timedelta = future - now;
+    let leftover = timedelta;
+    days = ~~(leftover / (24 * 60 * 60 * 1000));
+    leftover = ~~(leftover % (24 * 60 * 60 * 1000));
 
-  let hours = ~~(leftover / (60 * 60 * 1000));
-  leftover = ~~(leftover % (60 * 60 * 1000));
+    hours = ~~(leftover / (60 * 60 * 1000));
+    leftover = ~~(leftover % (60 * 60 * 1000));
 
-  let minutes = ~~(leftover / (60 * 1000));
-  leftover = ~~(leftover % (60 * 1000));
+    minutes = ~~(leftover / (60 * 1000));
+    leftover = ~~(leftover % (60 * 1000));
 
-  let seconds = ~~(leftover / 1000);
+    seconds = ~~(leftover / 1000);
+  }
 
-let pluralRules = new Intl.PluralRules(locale, { type: 'cardinal' });
+  setInterval(function () {
+    now = new Date();
+  }, 10);
+
+  let pluralRules = new Intl.PluralRules(locale, { type: 'cardinal' });
   function pluralize(num, key) {
     let plural = pluralRules.select(num);
     let text = dictionary[locale][key][plural];
