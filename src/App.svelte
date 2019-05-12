@@ -1,6 +1,6 @@
 <script>
   const future = new Date('2019-05-29T14:00:00-0600');
-  const locale = 'pl-PL';
+  const locale = 'en-CA';
 
   let asNum = (function(inst) {
     return inst.format.bind(inst);
@@ -62,11 +62,14 @@
 
 
 <main>
-  <ul>
-    <li> {pluralize(days, 'day')}
-    <li> {pluralize(hours, 'hour')}
-    <li> {pluralize(minutes, 'minute')}
-    <li> {pluralize(seconds, 'second')}
-  </ul>
+  <p> There's only
+    <span class="big-display">
+      <span class="days">{pluralize(days, 'day')}</span>,
+      <span class="hour">{pluralize(hours, 'hour')}</span>,
+      <span class="minute">{pluralize(minutes, 'minute')}</span>, and
+      <span class="second">{pluralize(seconds, 'second')}</span>
+    </span>
+      left.
+  </p>
 </main>
 <!-- vim: ft=html ts=2 sw=2: -->
