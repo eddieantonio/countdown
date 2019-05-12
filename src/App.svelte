@@ -23,10 +23,10 @@
       'second': {one: 'segundo', other: 'segundos'},
     },
     'pl-PL': {
-      'day': {one: 'dziń', few: 'dni', many: 'dni'},
-      'hour': {one: 'godzina', few: 'godziny', many: 'godzin'},
-      'minute': {one: 'minuta', few: 'minuty', many: 'minut'},
-      'second': {one: 'secunda', few: 'secundy', many: 'secund'},
+      'day': {one: 'dziń', few: 'dni', many: 'dni', other: 'dni'},
+      'hour': {one: 'godzina', few: 'godziny', many: 'godzin', other: 'godzin'},
+      'minute': {one: 'minuta', few: 'minuty', many: 'minut', other: 'minut'},
+      'second': {one: 'secunda', few: 'secundy', many: 'secund', other: 'secund'},
     },
   }
 
