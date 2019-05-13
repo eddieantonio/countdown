@@ -38,7 +38,7 @@
     return `${asNum(num)} ${text}`;
   }
 </script>
-    
 
-<span class="days">{pluralize(amount, unit)}</span>
+
+<span class="duration duration-{unit}">{pluralize(amount, unit)}</span>
 <!-- vim: ft=html ts=2 sw=2: -->
