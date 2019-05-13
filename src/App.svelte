@@ -5,23 +5,21 @@
   import Duration from './Duration.svelte';
   import {TimeDelta} from './TimeDelta';
 
+  // Constantly recalculate the time.
   let now = new Date();
-  let t;
-
-  $: t = new TimeDelta(future - now);
-  setInterval(function () {
-    now = new Date();
-  }, 10);
+  let tMinus;
+  $: tMinus = new TimeDelta(future - now);
+  setInterval(() => { now = new Date() }, 10);
 </script>
 
 
 <main>
   <p> There's only
     <span class="big-display">
-      <Duration amount={t.days} unit="day" {locale} />,
-      <Duration amount={t.hours} unit="hour" {locale} />,
-      <Duration amount={t.minutes} unit="minute" {locale} />, and
-      <Duration amount={t.seconds} unit="second" {locale} />
+      <Duration amount={tMinus.days} unit="day" {locale} />,
+      <Duration amount={tMinus.hours} unit="hour" {locale} />,
+      <Duration amount={tMinus.minutes} unit="minute" {locale} />, and
+      <Duration amount={tMinus.seconds} unit="second" {locale} />
     </span>
       left.
   </p>
