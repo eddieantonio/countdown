@@ -18,19 +18,37 @@
 
 
 <main>
-  <p> There's only
-    <span class="big-display">
-      <Duration amount={tMinus.days} unit="day" />,
-      <Duration amount={tMinus.hours} unit="hour" />,
-      <Duration amount={tMinus.minutes} unit="minute"/>, and
-      <Duration amount={tMinus.seconds} unit="second" />
-    </span>
+  <p>
+    {#if $locale === 'pl-PL'}
+      <span class="big-display">
+        <Duration amount={tMinus.days} unit="day" />,
+        <Duration amount={tMinus.hours} unit="hour" />,
+        <Duration amount={tMinus.minutes} unit="minute"/>,
+        i <Duration amount={tMinus.seconds} unit="second" />.
+      </span>
+    {:else if $locale === 'es-GT'}
+      Sólo quedan
+      <span class="big-display">
+        <Duration amount={tMinus.days} unit="day" />,
+        <Duration amount={tMinus.hours} unit="hour" />,
+        <Duration amount={tMinus.minutes} unit="minute"/>,
+        y <Duration amount={tMinus.seconds} unit="second" />.
+      </span>
+    {:else}
+      There's only
+      <span class="big-display">
+        <Duration amount={tMinus.days} unit="day" />,
+        <Duration amount={tMinus.hours} unit="hour" />,
+        <Duration amount={tMinus.minutes} unit="minute"/>,
+        and <Duration amount={tMinus.seconds} unit="second" />
+      </span>
       left.
+    {/if}
   </p>
 </main>
 
 <footer>
-  <button value='en-CA' on:click={changeLocale}>🇨🇦 English</button><!-- might upset Québec -->
+  <button value='en-CA' on:click={changeLocale}>🇨🇦 English</button>
   <button value='es-GT' on:click={changeLocale}>🇬🇹 Español</button>
   <button value='pl-PL' on:click={changeLocale}>🇵🇱 Polski</button>
 </footer>
