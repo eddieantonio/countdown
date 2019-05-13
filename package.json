@@ -4,11 +4,12 @@
   "description": "A countdown",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup --config && cp src/index.html dist/"
   },
   "author": "",
   "license": "ISC",
-  "repository": "file:///dev/null",
+  "repository": "https://github.com/eddieantonio/countdown.git",
   "devDependencies": {
     "rollup": "^1.10.0",
     "rollup-plugin-node-resolve": "^4.2.4",
