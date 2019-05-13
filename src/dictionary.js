@@ -15,6 +15,6 @@ export default {
     'day': {one: 'dziń', few: 'dni', many: 'dni', other: 'dni'},
     'hour': {one: 'godzina', few: 'godziny', many: 'godzin', other: 'godzin'},
     'minute': {one: 'minuta', few: 'minuty', many: 'minut', other: 'minut'},
-    'second': {one: 'secunda', few: 'secundy', many: 'secund', other: 'secund'},
+    'second': {one: 'sekunda', few: 'sekundy', many: 'sekund', other: 'sekund'},
   },
 };
