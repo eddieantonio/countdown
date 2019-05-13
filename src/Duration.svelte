@@ -1,9 +1,14 @@
 <script>
   export let amount;
   export let unit;
-  export let locale;
 
   import dictionary from './dictionary';
+  import {locale as localeStore} from './locale';
+
+  let locale;
+  localeStore.subscribe(value => {
+    locale = value;
+  });
 
   let asNum = (function(inst) {
     return inst.format.bind(inst);
