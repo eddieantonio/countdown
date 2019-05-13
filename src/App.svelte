@@ -1,6 +1,5 @@
 <script>
   const future = new Date('2019-05-29T14:00:00-0600');
-  const locale = 'en-CA';
 
   import Duration from './Duration.svelte';
   import {TimeDelta} from './TimeDelta';
@@ -10,6 +9,12 @@
   let tMinus;
   $: tMinus = new TimeDelta(future - now);
   setInterval(() => { now = new Date() }, 10);
+
+  // The locale can be changed.
+  let locale = 'en-CA';
+  function changeLocale(newLocale) {
+    locale = newLocale;
+  }
 </script>
 
 
@@ -24,3 +29,11 @@
       left.
   </p>
 </main>
+
+<footer>
+  <ul class="language-picker">
+    <button on:click={() => changeLocale('en-CA')}>🇨🇦</button><!-- might upset Québec -->
+    <button on:click={() => changeLocale('es-GT')}>🇬🇹 </button>
+    <button on:click={() => changeLocale('pl-PL')}>🇵🇱 </button>
+  </ul>
+</footer>
