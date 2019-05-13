@@ -10,20 +10,19 @@
     locale = value;
   });
 
-  let asNum = (function(inst) {
-    return inst.format.bind(inst);
-  }(new Intl.NumberFormat(locale, {
-    style: 'decimal',
-    useGrouping: true
-  })));
+  function pluralize(num, key, locale) {
+    let pluralRules = new Intl.PluralRules(locale, { type: 'cardinal' });
+    let numberRules = new Intl.NumberFormat(locale, {
+      style: 'decimal',
+      useGrouping: true
+    });
 
-  let pluralRules = new Intl.PluralRules(locale, { type: 'cardinal' });
-  function pluralize(num, key) {
     let plural = pluralRules.select(num);
+    let number = numberRules.format(num);
     let text = dictionary[locale][key][plural];
-    return `${asNum(num)} ${text}`;
+    return `${number} ${text}`;
   }
 </script>
 
 
-<span class="duration duration-{unit}">{pluralize(amount, unit)}</span>
+<span class="duration duration-{unit}">{pluralize(amount, unit, locale)}</span>
