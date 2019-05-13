@@ -3,25 +3,12 @@
   const locale = 'en-CA';
 
   import Duration from './Duration.svelte';
+  import {TimeDelta} from './TimeDelta';
 
   let now = new Date();
-  let timedelta, days, hours, minutes, seconds;
+  let t;
 
-  $: {
-    timedelta = future - now;
-    let leftover = timedelta;
-    days = ~~(leftover / (24 * 60 * 60 * 1000));
-    leftover = ~~(leftover % (24 * 60 * 60 * 1000));
-
-    hours = ~~(leftover / (60 * 60 * 1000));
-    leftover = ~~(leftover % (60 * 60 * 1000));
-
-    minutes = ~~(leftover / (60 * 1000));
-    leftover = ~~(leftover % (60 * 1000));
-
-    seconds = ~~(leftover / 1000);
-  }
-
+  $: t = new TimeDelta(future - now);
   setInterval(function () {
     now = new Date();
   }, 10);
@@ -31,10 +18,10 @@
 <main>
   <p> There's only
     <span class="big-display">
-      <Duration amount={days} unit="day" {locale} />,
-      <Duration amount={hours} unit="hour" {locale} />,
-      <Duration amount={minutes} unit="minute" {locale} />, and
-      <Duration amount={seconds} unit="second" {locale} />
+      <Duration amount={t.days} unit="day" {locale} />,
+      <Duration amount={t.hours} unit="hour" {locale} />,
+      <Duration amount={t.minutes} unit="minute" {locale} />, and
+      <Duration amount={t.seconds} unit="second" {locale} />
     </span>
       left.
   </p>
