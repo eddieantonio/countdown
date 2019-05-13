@@ -41,4 +41,3 @@
 
 
 <span class="duration duration-{unit}">{pluralize(amount, unit)}</span>
-<!-- vim: ft=html ts=2 sw=2: -->

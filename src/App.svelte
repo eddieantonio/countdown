@@ -39,4 +39,3 @@
       left.
   </p>
 </main>
-<!-- vim: ft=html ts=2 sw=2: -->
