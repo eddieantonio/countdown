@@ -20,6 +20,7 @@
 <main>
   <p>
     {#if $locale === 'pl-PL'}
+      Zostało tylko
       <span class="big-display">
         <Duration amount={tMinus.days} unit="day" />,
         <Duration amount={tMinus.hours} unit="hour" />,
