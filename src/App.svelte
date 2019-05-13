@@ -30,9 +30,7 @@
 </main>
 
 <footer>
-  <ul class="language-picker">
-    <button value='en-CA' on:click={changeLocale}>🇨🇦</button><!-- might upset Québec -->
-    <button value='es-GT' on:click={changeLocale}>🇬🇹</button>
-    <button value='pl-PL' on:click={changeLocale}>🇵🇱 </button>
-  </ul>
+  <button value='en-CA' on:click={changeLocale}>🇨🇦 English</button><!-- might upset Québec -->
+  <button value='es-GT' on:click={changeLocale}>🇬🇹 Español</button>
+  <button value='pl-PL' on:click={changeLocale}>🇵🇱 Polski</button>
 </footer>
