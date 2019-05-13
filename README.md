@@ -31,5 +31,7 @@ can be statically-hosted on a server.
     ├── bundle.js
     └── index.html
 
+That is, just copy `dist/bundle.js` and `dist/index.html` to some place
+that your server will host them!
 
 [NodeJS]: https://nodejs.org/en/
