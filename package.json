@@ -2,12 +2,13 @@
   "name": "countdown",
   "version": "1.0.0",
   "description": "A countdown",
-  "main": "index.js",
+  "main": "/dev/null",
+  "private": "yes",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup --config && cp src/index.html dist/"
   },
-  "author": "",
+  "author": "Eddie Antonio Santos <easantos@ualberta.ca>",
   "license": "ISC",
   "repository": "https://github.com/eddieantonio/countdown.git",
   "devDependencies": {
