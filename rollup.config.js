@@ -1,18 +1,21 @@
-import svelte from 'rollup-plugin-svelte';
+import copy from 'rollup-plugin-copy';
 import resolve from 'rollup-plugin-node-resolve';
+import svelte from 'rollup-plugin-svelte';
+
+const OUTDIR = 'dist';
 
 export default {
   input: 'src/main.js',
   output: {
-    file: 'dist/bundle.js',
+    file: `${OUTDIR}/bundle.js`,
     format: 'iife'
   },
   plugins: [
-    svelte({
-      // You can restrict which files are compiled
-      // using `include` and `exclude`
-      include: 'src/**/*.svelte',
+    svelte(),
+    resolve(),
+    copy({
+      targets: ['./src/index.html'],
+      outputFolder: OUTDIR
     }),
-    resolve()
   ]
 }
