@@ -1,6 +1,7 @@
 import copy from 'rollup-plugin-copy';
 import resolve from 'rollup-plugin-node-resolve';
 import svelte from 'rollup-plugin-svelte';
+import {terser} from 'rollup-plugin-terser';
 
 const OUTDIR = 'dist';
 
@@ -17,5 +18,6 @@ export default {
       targets: ['./src/index.html'],
       outputFolder: OUTDIR
     }),
+    terser(),
   ]
 }
