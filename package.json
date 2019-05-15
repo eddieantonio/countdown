@@ -6,7 +6,8 @@
   "private": "yes",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup --config"
+    "build": "rollup --config",
+    "now-build": "npm run build"
   },
   "author": "Eddie Antonio Santos <easantos@ualberta.ca>",
   "license": "ISC",
