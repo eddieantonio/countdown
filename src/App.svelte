@@ -8,7 +8,7 @@
   // Constantly recalculate the time.
   let now = new Date();
   let tMinus;
-  $: tMinus = new TimeDelta(future - now);
+  $:  tMinus = new TimeDelta(Math.max(future - now, 0));
   setInterval(() => { now = new Date() }, 10);
 
   function changeLocale(event) {
